@@ -5,8 +5,8 @@ module.exports = {
 		main: './src/main.server.ts'
 	},
 	resolve: {
-      extensions: ['.ts', '.js']
-    },
+    extensions: ['.ts', '.js']
+  },
 	target: 'node',
 	output: {
 		path: 'dist',
@@ -20,9 +20,9 @@ module.exports = {
 	module: {
 		rules: [
 			{
-              test: /\.ts$/,
-              loader: '@ngtools/webpack',
-            }
+        test: /\.ts$/,
+        loader: '@ngtools/webpack',
+      }
 		]
 	}
 }

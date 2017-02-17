@@ -6,7 +6,8 @@
   "scripts": {
 	  "start": "npm run build && npm run server",
 	  "build": "webpack -p",
-	  "server": "node dist/main.js"
+	  "server": "node dist/main.js",
+    "watch": "webpack --watch"
   },
   "engines": {
     "node": ">=6.0.0"
