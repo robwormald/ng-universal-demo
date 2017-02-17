@@ -1,16 +1,15 @@
 const ngtools = require('@ngtools/webpack');
+const webpackMerge = require('webpack-merge');
 
-module.exports = {
-	entry: {
-		main: './src/main.server.ts'
-	},
+const serverConfig = {
+	entry: './src/main.server.ts',
 	resolve: {
-      extensions: ['.ts', '.js']
-    },
+    extensions: ['.ts', '.js']
+  },
 	target: 'node',
 	output: {
 		path: 'dist',
-		filename: '[name].js'
+		filename: 'server.js'
 	},
 	plugins: [
 		new ngtools.AotPlugin({
@@ -20,9 +19,19 @@ module.exports = {
 	module: {
 		rules: [
 			{
-              test: /\.ts$/,
-              loader: '@ngtools/webpack',
-            }
+        test: /\.ts$/,
+        loader: '@ngtools/webpack',
+      }
 		]
 	}
-}
+};
+
+const clientConfig = webpackMerge({}, serverConfig, {
+  entry:  './src/main.browser.ts',
+  output: {
+    filename: 'client.js'
+  },
+  target: 'web'
+});
+
+module.exports = [clientConfig, serverConfig];
