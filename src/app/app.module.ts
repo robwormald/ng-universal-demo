@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeView } from './home/home-view.component';
@@ -7,11 +9,15 @@ import { HomeView } from './home/home-view.component';
 
 @NgModule({
 	imports: [
+    HttpModule,
 		RouterModule.forRoot([
 			{ path: '', component: HomeView, pathMatch: 'full'},
 			{ path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}
 		])
 	],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/'}
+  ],
 	declarations: [ AppComponent, HomeView ],
   exports: [ AppComponent ]
 })
