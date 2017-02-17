@@ -14,9 +14,6 @@ export class LazyView {}
 		RouterModule.forChild([
 			{ path: '', component: LazyView, pathMatch: 'full'}
 		])
-	],
-	providers: [
-
 	]
 })
 export class LazyModule {

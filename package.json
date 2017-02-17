@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": {},
+  "scripts": {
+	  "start": "npm run build && npm run server",
+	  "build": "webpack -p",
+	  "server": "node dist/main.js"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "license": "MIT",
   "dependencies": {
     "@angular/common": "angular/common-builds",

@@ -7,6 +7,7 @@ import * as express from 'express';
 import {ngExpressEngine} from './express-engine'
 
 enableProdMode();
+
 const app = express();
 
 app.engine('html', ngExpressEngine({

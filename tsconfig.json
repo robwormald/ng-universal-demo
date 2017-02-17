@@ -18,6 +18,6 @@
 	],
 	"angularCompilerOptions": {
 		"genDir": "src/ngfactory",
-		"entryModule": "./src/app.server#AppServerModule"
+		"entryModule": "./src/app#AppModule"
 	}
 }

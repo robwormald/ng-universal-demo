@@ -1,3 +1,5 @@
+//hacky express wrapper thingy.
+
 const fs = require('fs');
 const path = require('path');
 import {renderModuleFactory} from '@angular/platform-server';
@@ -13,7 +15,7 @@ export function ngExpressEngine(setupOptions){
 		}
 		renderModuleFactory(setupOptions.bootstrap[0], {
 			document: templateCache[filePath],
-			url: setupOptions.baseUrl + options.req.url
+			url: options.req.url
 		})
 		.then(string => {
 			callback(null, string);

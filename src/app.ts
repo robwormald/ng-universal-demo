@@ -4,24 +4,20 @@ import { RouterModule } from '@angular/router'
 
 @Component({
 	selector: 'home-view',
-	template: `
-	  <h3>Home View</h3>
-	`
+	template: `<h3>Home View</h3>`
 })
 export class HomeView {}
-
 
 @Component({
 	selector: 'demo-app',
 	template: `
 	  <h1>Universal Demo</h1>
+	  <a routerLink="/">Home</a>
+	  <a routerLink="/lazy">Lazy</a>
 	  <router-outlet></router-outlet>
 	`
 })
-export class AppComponent {
-	constructor(){}
-}
-
+export class AppComponent {}
 
 @NgModule({
 	imports: [
@@ -34,6 +30,4 @@ export class AppComponent {
 	declarations: [ AppComponent, HomeView ],
 	bootstrap: [ AppComponent ]
 })
-export class AppModule {
-
-}
+export class AppModule {}
