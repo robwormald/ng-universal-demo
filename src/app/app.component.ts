@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { UniversalCache } from '../modules/universal-cache/universal-cache';
 
 @Component({
 	selector: 'demo-app',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core'
 	  <router-outlet></router-outlet>
 	`
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  constructor(private cache: UniversalCache) {}
+  ngOnInit() {
+    this.cache.set('cached', true);
+  }
+}
