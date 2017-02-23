@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 import { Request } from 'express';
-import { NgModuleFactory, NgZone, NgModuleRef } from '@angular/core';
+import { NgModuleFactory, NgZone, NgModuleRef, ApplicationRef } from '@angular/core';
 import { DOCUMENT, __platform_browser_private__ } from '@angular/platform-browser';
 import { renderModuleFactory, platformServer, PlatformState, INITIAL_CONFIG, __platform_server_private__ } from '@angular/platform-server';
 import { UniversalCache } from '../universal-cache/universal-cache';
@@ -37,9 +37,10 @@ function handleRequestFancy(req: Request, document: string, moduleFactory: NgMod
   platform.bootstrapModuleFactory(moduleFactory)
     .then(moduleRef => {
       const state = moduleRef.injector.get(PlatformState);
-      const zone = moduleRef.injector.get(NgZone);
-      zone.onStable
-        .debounceTime(10) // Temporary?
+      const appRef = moduleRef.injector.get(ApplicationRef);
+
+      appRef.isStable
+        .filter((isStable: boolean) => isStable)
         .first()
         .subscribe(
           (stable) => {
