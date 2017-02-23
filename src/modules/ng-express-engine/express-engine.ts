@@ -38,13 +38,16 @@ function handleRequestFancy(req: Request, document: string, moduleFactory: NgMod
     .then(moduleRef => {
       const state = moduleRef.injector.get(PlatformState);
       const zone = moduleRef.injector.get(NgZone);
-      zone.onStable.take(1).subscribe(
-        () => {
-          injectCache(moduleRef);
+      zone.onStable
+        .debounceTime(10) // Temporary?
+        .first()
+        .subscribe(
+          (stable) => {
+            injectCache(moduleRef);
 
-          callback(null, state.renderToString());
-          platform.destroy();
-        }
+            callback(null, state.renderToString());
+            platform.destroy();
+          }
       )
     })
 }
