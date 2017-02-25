@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 import { Request } from 'express';
 import { NgModuleFactory, NgZone, NgModuleRef, ApplicationRef } from '@angular/core';
-import { DOCUMENT, __platform_browser_private__ } from '@angular/platform-browser';
-import { renderModuleFactory, platformServer, PlatformState, INITIAL_CONFIG, __platform_server_private__ } from '@angular/platform-server';
+import { DOCUMENT, ɵgetDOM } from '@angular/platform-browser';
+import { renderModuleFactory, platformServer, PlatformState, INITIAL_CONFIG } from '@angular/platform-server';
 import { UniversalCache } from '../universal-cache/universal-cache';
 
 const templateCache = {};
-const getDOM = __platform_browser_private__.getDOM;
+const getDOM = ɵgetDOM;
 export function ngExpressEngine(setupOptions) {
 
 	return function(filePath, options, callback) {
