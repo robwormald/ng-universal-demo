@@ -21,7 +21,9 @@ export class AppComponent {}
 
 @NgModule({
 	imports: [
-		BrowserModule,
+		BrowserModule.withServerTransition({
+		  appId: 'universal-demo-app'
+		}),
 		RouterModule.forRoot([
 			{ path: '', component: HomeView, pathMatch: 'full'},
 			{ path: 'lazy', loadChildren: './lazy.module#LazyModule'}
