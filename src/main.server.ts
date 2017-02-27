@@ -10,11 +10,13 @@ enableProdMode();
 
 const app = express();
 
+
 app.engine('html', ngExpressEngine({
 	baseUrl: 'http://localhost:4200',
 	bootstrap: [AppServerModuleNgFactory]
 }));
 
+app.set('port', process.env.PORT || 8000);
 app.set('view engine', 'html');
 app.set('views', 'src')
 
@@ -26,6 +28,6 @@ app.get('/lazy', (req, res) => {
 	res.render('index', {req});
 });
 
-app.listen(8000,() => {
-	console.log('listening...')
+app.listen(app.get('port'),() => {
+	console.log(`${(new Date()).toLocaleTimeString()}: listening on :${app.get('port')}`);
 });
