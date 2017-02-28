@@ -18,6 +18,6 @@
 	],
 	"angularCompilerOptions": {
 		"genDir": "src/ngfactory",
-		"entryModule": "./src/app#AppModule"
+		"entryModule": "./src/app.browser.module#AppBrowserModule"
 	}
 }
