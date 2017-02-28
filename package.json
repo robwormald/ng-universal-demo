@@ -4,9 +4,10 @@
   "main": "index.js",
   "repository": {},
   "scripts": {
-    "start": "echo \nUSAGE:\nnpm run ssr for server-side rendering (http://127.0.0.1:8000)\nnpm run csr for client-side rendering (http://127.0.0.1:4200)",
+    "start": "echo \nUSAGE:\nnpm run ssr for server-side rendering (http://127.0.0.1:8000)\nnpm run csr for client-side rendering (http://127.0.0.1:4200)\nnpm run build to build CSR+SSR",
     "ssr": "ngc && webpack -p && node dist/main.js",
-    "csr": "ng serve"
+    "csr": "ngc && ng serve",
+    "build": "ngc && webpack -p && ng build"
   },
   "engines": {
     "node": ">=6.0.0"
