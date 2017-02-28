@@ -23,7 +23,7 @@ After downloading/cloning this repo :
 Go to 127.0.0.1:**4200**  
 CTRL+U to see the page source : nothing fancy.
 
-### Launch app with client-side rendering : 
+### Launch app with server-side rendering : 
 
     npm run ssr
 
