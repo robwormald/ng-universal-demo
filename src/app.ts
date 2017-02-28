@@ -1,12 +1,13 @@
 import { NgModule, Component } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
 	selector: 'home-view',
 	template: `<h3>Home View</h3>`
 })
-export class HomeView {}
+export class HomeView { }
 
 @Component({
 	selector: 'demo-app',
@@ -17,19 +18,22 @@ export class HomeView {}
 	  <router-outlet></router-outlet>
 	`
 })
-export class AppComponent {}
+export class AppComponent { }
 
 @NgModule({
 	imports: [
 		BrowserModule.withServerTransition({
-		  appId: 'universal-demo-app'
+			appId: 'universal-demo-app'
 		}),
 		RouterModule.forRoot([
-			{ path: '', component: HomeView, pathMatch: 'full'},
-			{ path: 'lazy', loadChildren: './lazy.module#LazyModule'}
+			{ path: '', component: HomeView, pathMatch: 'full' },
+			{ path: 'lazy', loadChildren: './lazy.module#LazyModule' }
 		])
 	],
-	declarations: [ AppComponent, HomeView ],
-	bootstrap: [ AppComponent ]
+	declarations: [AppComponent, HomeView],
+	bootstrap: [AppComponent],
+	providers: [
+		{ provide: APP_BASE_HREF, useValue: '/' },
+	]
 })
-export class AppModule {}
+export class AppModule { }

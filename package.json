@@ -4,9 +4,9 @@
   "main": "index.js",
   "repository": {},
   "scripts": {
-	  "start": "npm run build && npm run server",
-	  "build": "ngc && webpack -p",
-	  "server": "node dist/main.js"
+    "start": "npm run build && npm run server",
+    "build": "ngc && webpack -p",
+    "server": "node dist/main.js"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -30,5 +30,8 @@
     "webpack": "^2.2.1",
     "xhr2": "^0.1.4",
     "zone.js": "^0.7.7"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.0.0-rc.0"
   }
 }
