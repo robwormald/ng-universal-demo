@@ -1,4 +1,4 @@
-## Angular Universale : SSR + CSR
+## Angular Universal : SSR + CSR
 
 The purpose of this demo is to show one application code used without modification for server-side rendering (SSR) and client-side rendering (CSR).  
 CSR is the way of rendering we all know : the client receives HTML+CSS+JS. The JS works on the DOM and produces the page with its behavior. Two problems with CSR : 
