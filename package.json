@@ -4,9 +4,9 @@
   "main": "index.js",
   "repository": {},
   "scripts": {
-    "start": "npm run build && npm run server",
-    "build": "ngc && webpack -p",
-    "server": "node dist/main.js"
+    "start": "echo \nUSAGE:\nnpm run start:ssr for server-side rendering (http://127.0.0.1:8000)\nnpm run start:csr for client-side rendering (http://127.0.0.1:4200)",
+    "start:ssr": "ngc && webpack -p && node dist/main.js",
+    "start:csr": "ng serve"
   },
   "engines": {
     "node": ">=6.0.0"
