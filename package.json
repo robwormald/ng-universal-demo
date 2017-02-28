@@ -5,7 +5,7 @@
   "repository": {},
   "scripts": {
 	  "start": "npm run build && npm run server",
-	  "build": "webpack -p",
+	  "build": "ngc && webpack -p",
 	  "server": "node dist/main.js"
   },
   "engines": {
