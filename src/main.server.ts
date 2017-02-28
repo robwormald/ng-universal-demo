@@ -27,5 +27,5 @@ app.get('/lazy', (req, res) => {
 });
 
 app.listen(8000,() => {
-	console.log('listening...')
+	console.log('listening on  port 8000...')
 });
