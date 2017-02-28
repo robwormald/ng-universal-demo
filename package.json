@@ -4,9 +4,10 @@
   "main": "index.js",
   "repository": {},
   "scripts": {
-	  "start": "npm run build && npm run server",
-	  "build": "webpack -p",
-	  "server": "node dist/main.js"
+    "start": "echo \nUSAGE:\nnpm run ssr for server-side rendering (http://127.0.0.1:8000)\nnpm run csr for client-side rendering (http://127.0.0.1:4200)\nnpm run build to build CSR+SSR",
+    "ssr": "ngc && webpack && node dist/main.js",
+    "csr": "ngc && ng serve",
+    "build": "ngc && webpack && ng build"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -30,5 +31,8 @@
     "webpack": "^2.2.1",
     "xhr2": "^0.1.4",
     "zone.js": "^0.7.7"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.0.0-rc.0"
   }
 }
