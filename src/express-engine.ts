@@ -15,7 +15,7 @@ export function ngExpressEngine(setupOptions){
 		}
 		renderModuleFactory(setupOptions.bootstrap[0], {
 			document: templateCache[filePath],
-			url: options.req.url
+			url: options.req.originalUrl
 		})
 		.then(string => {
 			callback(null, string);
