@@ -1,5 +1,4 @@
 import 'zone.js/dist/zone-node';
-import { platformServer, renderModuleFactory } from '@angular/platform-server'
 import { enableProdMode } from '@angular/core'
 import { AppServerModule } from './app.server'
 import { AppServerModuleNgFactory } from './ngfactory/src/app.server.ngfactory'
@@ -26,6 +25,8 @@ app.get('/lazy', (req, res) => {
 	res.render('index', {req});
 });
 
-app.listen(8000,() => {
-	console.log('listening...')
+const PORT: number = 8000;
+
+app.listen(PORT, () => {
+	console.log(`listening on port ${PORT}...`)
 });
