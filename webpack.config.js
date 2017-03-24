@@ -1,3 +1,4 @@
+const path = require('path');
 const ngtools = require('@ngtools/webpack');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
     },
 	target: 'node',
 	output: {
-		path: 'dist',
+		path: path.join(__dirname, 'dist'),
 		filename: '[name].js'
 	},
 	plugins: [
