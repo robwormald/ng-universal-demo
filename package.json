@@ -4,31 +4,35 @@
   "main": "index.js",
   "repository": {},
   "scripts": {
-	  "start": "npm run build && npm run server",
-	  "build": "webpack -p",
-	  "server": "node dist/main.js"
+    "start": "npm run build && npm run server",
+    "build": "webpack -p",
+    "server": "node dist/main.js"
   },
   "engines": {
     "node": ">=6.0.0"
   },
   "license": "MIT",
   "dependencies": {
-    "@angular/common": "angular/common-builds",
-    "@angular/compiler": "angular/compiler-builds",
-    "@angular/compiler-cli": "angular/compiler-cli-builds",
-    "@angular/core": "angular/core-builds",
-    "@angular/http": "angular/http-builds",
-    "@angular/platform-browser": "angular/platform-browser-builds",
-    "@angular/platform-server": "angular/platform-server-builds",
-    "@angular/router": "angular/router-builds",
+    "@angular/animations": "^4.0.1",
+    "@angular/common": "^4.0.1",
+    "@angular/compiler": "^4.0.1",
+    "@angular/compiler-cli": "^4.0.1",
+    "@angular/core": "^4.0.1",
+    "@angular/forms": "^4.0.1",
+    "@angular/http": "^4.0.1",
+    "@angular/platform-browser": "^4.0.1",
+    "@angular/platform-browser-dynamic": "^4.0.1",
+    "@angular/platform-server": "^4.0.1",
+    "@angular/router": "^4.0.1",
     "@ngtools/webpack": "^1.2.9",
     "@types/express": "^4.0.35",
     "@types/node": "^7.0.5",
     "express": "^4.14.1",
+    "path": "^0.12.7",
     "rxjs": "^5.1.1",
-    "typescript": "^2.1.6",
+    "typescript": "^2.2.2",
     "webpack": "^2.2.1",
     "xhr2": "^0.1.4",
-    "zone.js": "^0.7.7"
+    "zone.js": "^0.8.4"
   }
 }
